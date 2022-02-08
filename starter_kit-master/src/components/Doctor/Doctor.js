@@ -4,7 +4,7 @@ const Doctor = () => {
   return <div>
         <ul>
         <li> <Link to="/">Back to Landing</Link> </li>
-        <li> This is Doctor site </li>
+        <li> Degree dikha lode </li>
         </ul>
   </div>;
 };
