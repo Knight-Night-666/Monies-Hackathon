@@ -1,12 +1,23 @@
-import React, { Component } from 'react';
+import React, { Component,useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 import Web3 from 'web3'
 import logo from '../logo.png';
-import './App.css';
+
+
 import Marketplace from '../abis/Marketplace.json'
+
 import Navbar from './Navbar'
+import Landing from './Landing/Landing'
+import Doctor from './Doctor/Doctor'
+import Patient from './Patient/Patient';
 
 class App extends Component {
-
+  
   async componentWillMount() {
     await this.loadWeb3()
     await this.loadBlockchainData()
@@ -49,39 +60,20 @@ class App extends Component {
       loading: true
     }
   }
-
+  
   render() {
     return (
+      <Router>
       <div>
-        <Navbar account={this.state.account} />
-        <div className="container-fluid mt-5">
-          <div className="row">
-            <main role="main" className="col-lg-12 d-flex text-center">
-              <div className="content mr-auto ml-auto">
-                <a
-                  href="http://www.dappuniversity.com/bootcamp"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src={logo} className="App-logo" alt="logo" />
-                </a>
-                <h1>Dapp University Starter Kit</h1>
-                <p>
-                  Edit <code>src/components/App.js</code> and save to reload.
-                </p>
-                <a
-                  className="App-link"
-                  href="http://www.dappuniversity.com/bootcamp"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  LEARN BLOCKCHAIN <u><b>NOW! </b></u>
-                </a>
-              </div>
-            </main>
-          </div>
-        </div>
+        {/* <Navbar account={this.state.account} /> */}
+        
+        <Routes>
+          <Route exact path='/Doctor/Doctor' element={<Doctor/>}/>
+          <Route exact path='/Patient/Patient' element={<Patient/>}/>
+          <Route exact path='/' element={<Landing/>}/>
+        </Routes>
       </div>
+      </Router>
     );
   }
 }
