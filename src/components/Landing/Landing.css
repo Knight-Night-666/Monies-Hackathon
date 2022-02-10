@@ -1,0 +1,44 @@
+
+.landing_page_skeleton {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+
+    background: white;
+}
+.subpage_1 {
+    position: static;
+    width: 100%;
+    height: 100vh;
+
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+
+    /* dark-background-color */
+
+    background: #26335D;
+}
+.iamdoctor_button{
+    
+    background: #1BC768;
+    display: flex;
+    border-radius: 5px;
+    padding: 1%;
+    color: white;
+
+
+}
+.subpage_2 {
+    position: static;
+    width: 100%;
+    height: 100vh;
+
+    /* dark-background-color */
+
+    background: #ffffff;
+}

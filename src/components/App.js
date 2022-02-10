@@ -9,10 +9,11 @@ import {
 } from "react-router-dom";
 import './App.css';
 import Hospital from '../abis/Hospital.json';
-import Navbar from './Navbar';
+
 import Main from './Doctor/Main';
 import Landing from './Landing/Landing';
 import Patient from './Patient/Patient';
+import Navbar from './Navbar/Navbar';
 
 class App extends Component {
 
@@ -81,10 +82,11 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        {/* <Navbar account={this.state.account} /> */}
+      <div >
+        
+        <Navbar/>
         <Router>
-        <div>
+        <div >
         
         <Routes>
           <Route exact path='/Doctor/Main' element={

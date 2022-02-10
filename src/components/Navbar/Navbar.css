@@ -1,0 +1,25 @@
+
+.root{
+    background: #26335D;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    color: white;
+
+    padding:1%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.green_box{
+
+    background: #1BC768;
+    display: flex;
+    border-radius: 5px;
+    padding: 1%;
+    
+
+    
+}
