@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
 import Web3 from 'web3';
 import logo from '../logo.png';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 import './App.css';
 import Hospital from '../abis/Hospital.json';
 import Navbar from './Navbar';
-import Main from './Main';
+import Main from './Doctor/Main';
+import Landing from './Landing/Landing';
+import Patient from './Patient/Patient';
 
 class App extends Component {
 
@@ -74,8 +82,23 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navbar account={this.state.account} />
-        <div className="container-fluid mt-5">
+        {/* <Navbar account={this.state.account} /> */}
+        <Router>
+        <div>
+        
+        <Routes>
+          <Route exact path='/Doctor/Main' element={
+          <Main 
+          doctors = {this.state.doctors} 
+          addDoctor= {this.addDoctor}  
+          />
+          }/>
+          <Route exact path='/Patient/Patient' element={<Patient/>}/>
+          <Route exact path='/' element={<Landing/>}/>
+        </Routes>
+        </div>
+        </Router>
+        {/* <div className="container-fluid mt-5">
           <div className="row">
             <main role="main" className="col-lg-12 d-flex">
               {this.state.loading
@@ -87,7 +110,7 @@ class App extends Component {
               }
             </main>
           </div>
-        </div>
+        </div> */}
       </div>
     );
   }
