@@ -1,8 +1,10 @@
 import React , { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Landing.css'
-import { useAnimation, motion } from "framer-motion";
+import { useAnimation, motion } from "framer-motion/dist/es/index";
 import { useInView } from "react-intersection-observer";
+
+
 
 const sb2cardsVariant={
     hidden: {
@@ -31,6 +33,7 @@ const sb2cardVariant={
 
 const Landing = () => {
     let navigate = useNavigate();
+
     const controls = useAnimation();
     const [ref, inView] = useInView();
     useEffect(() => {
@@ -38,6 +41,14 @@ const Landing = () => {
         controls.start("visible");
         }
     }, [controls, inView]);
+
+    const controls1 = useAnimation();
+    const [ref1, inView1] = useInView();
+    useEffect(() => {
+        if (inView1) {
+        controls1.start("visible");
+        }
+    }, [controls1, inView1]);
 
   return <div className='landing_page_skeleton'>
         
@@ -55,7 +66,7 @@ const Landing = () => {
             
                 
            <div className="sb1doctor">
-            <img src='assets/landing/subpage1/doctor.png' height="100%"/>
+            <img src='assets/landing/subpage1/doctor.png' height="100%" />
            </div>
            
 
@@ -64,6 +75,7 @@ const Landing = () => {
             <div className='sb2heading'>
                 <img src = 'assets/landing/subpage2/heading.png' height = "100%"/>
             </div>
+
             <motion.div className='sb2cards' 
             ref={ref}
             animate={controls}
@@ -103,6 +115,43 @@ const Landing = () => {
             </motion.div>
         </div>
         <div className='subpage_3'>
+
+
+            <div className='sb3row'>
+                <img src = 'assets/landing/subpage3/row.png' height = "100%"/>
+            </div>
+            
+            <motion.div className='sb3cards' 
+            ref={ref1}
+            animate={controls1}
+            variants={sb2cardsVariant}
+            initial="hidden"
+            >
+                <motion.div className='sb2card1' whileHover={{ scale: 1.1 }}
+                variants={sb2cardVariant}
+                >
+                    <img src = 'assets/landing/subpage3/card1.png' height = "100%"/>
+                </motion.div>
+
+                
+                <motion.div className='sb2card2' whileHover={{ scale: 1.1 }}
+                variants={sb2cardVariant}
+                >
+                    <img src = 'assets/landing/subpage3/card2.png' height = "100%"/>
+                </motion.div>
+
+                <motion.div className='sb2card3' whileHover={{ scale: 1.1 }}
+                variants={sb2cardVariant}
+                >
+                    <img src = 'assets/landing/subpage3/card3.png' height = "100%"/>
+                </motion.div>
+
+                <motion.div className='sb2card2' whileHover={{ scale: 1.1 }}
+                variants={sb2cardVariant}
+                >
+                    <img src = 'assets/landing/subpage3/card4.png' height = "100%"/>
+                </motion.div>
+            </motion.div>
 
         </div>
         
