@@ -5,9 +5,10 @@ class Navbar extends Component {
     return (
         <nav className='root'>
             <h2>Medical App</h2>
-            <div className='green_box'>
-                Hello it's a green button
-            </div>
+
+            <img src="assets/navbar/contactus.png" height="50" />
+            
+            
         </nav>
     );
   }

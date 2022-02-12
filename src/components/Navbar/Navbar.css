@@ -2,6 +2,8 @@
 .root{
     background: #26335D;
 
+    width: 100%;
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -9,17 +11,10 @@
 
     color: white;
 
-    padding:1%;
+    padding:0.5%;
     padding-left: 10%;
     padding-right: 10%;
 }
-.green_box{
-
-    background: #1BC768;
-    display: flex;
-    border-radius: 5px;
-    padding: 1%;
-    
-
+.contactus{
     
 }
