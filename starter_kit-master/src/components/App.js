@@ -75,6 +75,7 @@ class App extends Component {
     this.setState({loading: true})
     this.state.hospital.methods.addDoctor(name,price, special).send({ from: this.state.account })
     .once('receipt', (receipt) => {
+      this.setState({DoctorCount: this.state.DoctorCount+1})
       this.setState({ loading: false })
       window.alert()
     })
@@ -93,6 +94,8 @@ class App extends Component {
           <Main 
           doctors = {this.state.doctors} 
           addDoctor= {this.addDoctor}  
+          account = {this.state.account}
+          doctorCount = {this.state.DoctorCount}
           />
           }/>
           <Route exact path='/Patient/Patient' element={<Patient/>}/>

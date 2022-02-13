@@ -6548,6 +6548,12 @@
       "links": {},
       "address": "0x816CB8A5e97463fA0c30A947F7e007bdCE042aF4",
       "transactionHash": "0xb02f3ab9306706407a77d6a7ef73581e8c4337f19f672e7210e5c5479e176429"
+    },
+    "80001": {
+      "events": {},
+      "links": {},
+      "address": "0x1128D467f8bE124caD3f5cc6647b0879D04D0e79",
+      "transactionHash": "0xb96754254bd87aa4449395e1d31b3d734239bf698fa6ec4440c598203062b476"
     }
   },
   "schemaVersion": "3.4.4",
