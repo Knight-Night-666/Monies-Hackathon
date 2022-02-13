@@ -1,17 +1,39 @@
 import React, { Component } from 'react';
-import { animate, motion } from 'framer-motion';
+import { Link, useNavigate } from 'react-router-dom';
+import { animate, motion } from "framer-motion/dist/es/index";
+
+
 import './Navbar.css'
-class Navbar extends Component {
-    render() {
-    return (
-        <nav className='root'>
-            <h2>Medical App</h2>
-            <img src="assets/navbar/contactus.png" height="50" />
+
+
+
+const Navbar = () => {
+    let navigate = useNavigate();
+    return <div>
+        
+        <div className='nav'>
+            <div className='title'>
+                <img src="assets/navbar/title.png" width="100%"/>
+            </div>
             
-            
-        </nav>
-    );
-  }
-}
+
+            <div className="dproutes" > 
+                <motion.div className='iampatient' onClick={()=>{
+                navigate('/Patient/Patient')}} whileHover={{ scale: 1.1 }}>
+                    <img src="assets/navbar/iampatient.png" width="100%"/>
+                </motion.div>
+                
+                <motion.div className='iamdoctor' onClick={()=>{
+                navigate('/Doctor/Main')}} whileHover={{ scale: 1.1 }}>
+                    <img src="assets/navbar/iamdoctor.png" width="100%"/>
+                </motion.div>
+                <motion.div className='contactus' whileHover={{ scale: 1.1 }}>
+                    <img src="assets/navbar/contactus.png" width="100%"/>
+                </motion.div>
+            </div>
+        </div>
+    </div>;
+  
+};
 
 export default Navbar;

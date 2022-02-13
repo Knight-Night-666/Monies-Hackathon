@@ -64,12 +64,24 @@ class App extends Component {
     this.state = {
       account: '',
       DoctorCount: 0,
+      PatientCount:0,
       doctors: [],
       loading: true
     }
 
     this.addDoctor = this.addDoctor.bind(this)
+    this.addAppointment = this.addAppointment.bind(this)
   }
+
+  addAppointment(id,name,symp,price) {
+    this.setState({loading: true})
+    this.state.hospital.methods.addAppointment(id,name,symp).send({from: this.state.account, value: price})
+    .once('receipt',(receipt)=> {
+      this.setState({PatientCount: this.state.PatientCount+1})
+      this.setState({ loading: false })
+    })
+  }
+
 
   addDoctor(name, price, special) {
     this.setState({loading: true})
@@ -77,7 +89,6 @@ class App extends Component {
     .once('receipt', (receipt) => {
       this.setState({DoctorCount: this.state.DoctorCount+1})
       this.setState({ loading: false })
-      window.alert()
     })
   }
 
@@ -85,8 +96,9 @@ class App extends Component {
     return (
       <div >
         
-        <Navbar/>
+        
         <Router>
+        <Navbar/>
         <div >
         
         <Routes>
@@ -98,24 +110,20 @@ class App extends Component {
           doctorCount = {this.state.DoctorCount}
           />
           }/>
-          <Route exact path='/Patient/Patient' element={<Patient/>}/>
+          <Route exact path='/Patient/Patient' element={
+          <Patient
+          doctors = {this.state.doctors} 
+          addAppointment = {this.addAppointment}
+          account = {this.state.account}
+          doctorCount = {this.state.DoctorCount}
+          />
+          }/>
           <Route exact path='/' element={<Landing/>}/>
+          
         </Routes>
         </div>
         </Router>
-        {/* <div className="container-fluid mt-5">
-          <div className="row">
-            <main role="main" className="col-lg-12 d-flex">
-              {this.state.loading
-              ? <div id="loader" className="text-center"><p className="text-center">Loading...</p></div>
-              : <Main 
-                  doctors = {this.state.doctors} 
-                  addDoctor= {this.addDoctor}  
-                />
-              }
-            </main>
-          </div>
-        </div> */}
+        
       </div>
     );
   }

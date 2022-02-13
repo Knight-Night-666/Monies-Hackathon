@@ -1,12 +1,8 @@
-import React, { Component, useEffect } from 'react';
-
-import { useNavigate } from 'react-router-dom';
-import './Main.css'
-import { useAnimation, motion } from "framer-motion/dist/es/index";
-import { useInView } from "react-intersection-observer";
+import React, { Component } from 'react';
 
 class Main extends Component {
 
+  //fucntion to check if the doctor exists already
   check() {
     var account = this.props.account
     // window.alert(this.props.doctors.length)
@@ -19,9 +15,10 @@ class Main extends Component {
 
   render() {
     var i = this.check()
-    if(this.check()==-1)
+    if(i==-1)
     return (
-      <div id="add_doc_page">
+      <div id="content">
+        <h1>Add Doctor</h1>
         <form onSubmit={(event) => {
           event.preventDefault()
           const name = this.name.value
@@ -29,12 +26,6 @@ class Main extends Component {
 		  const special = this.special.value
           this.props.addDoctor(name, price, special)
         }}>
-          <div className="docadd_doctor">
-            <img src='assets/addDoctor/doctor.png' height="100%"/>
-          </div>
-          <div className='docadd_heading'>
-                <img src = 'assets/addDoctor/Doctor_Details.png' height = "100%"/>
-          </div>
           <div className="form-group mr-sm-2">
             <input
               id="doctorName"
@@ -62,17 +53,11 @@ class Main extends Component {
               placeholder="Doctor Specialisation"
               required />
           </div>
-          {/* <motion.div className='sb2booknow'  onClick={()=>{
-                navigate("/Patient/Patient")
-            }} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }} >
-                
-                <img src = 'assets/landing/subpage2/Book_Now_butt.png' height = "100%"/>
-            </motion.div> */}
-          <button type="submit" className="btn btn-primary">Add Doctor</button>
+          <button type="submit" className="btn btn-primary">Add Product</button>
         </form>
-        {/* <p>&nbsp;</p>
-        <h2>Doctors</h2> */}
-        {/* <table className="table">
+        <p>&nbsp;</p>
+        {/* <h2>Doctors</h2>
+        <table className="table">
           <thead>
             <tr>
               <th scope="col">#</th>
@@ -98,19 +83,19 @@ class Main extends Component {
           </tbody>
         </table> */}
       </div>
-    )
+    );
     else
     return(
-    <div className="form-group mr-sm-2">
+      <div className="form-group mr-sm-2">
       Hello {this.props.doctors[i].name}
       <table className="table">
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Name</th>
-              <th scope="col">Fees</th>
-              <th scope="col">id</th>
-              <th scope="col">Specialisation</th>
+              <th scope="col">Patient Name</th>
+              <th scope="col">Age</th>
+              <th scope="col">Gender</th>
+              <th scope="col">Symptoms</th>
               <th scope="col"></th>
             </tr>
           </thead>
@@ -129,7 +114,7 @@ class Main extends Component {
           </tbody>
         </table>
       </div>
-    )
+    );
   }
 }
 
