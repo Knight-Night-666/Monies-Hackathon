@@ -3,7 +3,8 @@
 ## Inspiration:
 
 
-
+Problem it solves- Q1
+Challenges we ran into- Q2
 
 ## What it does:
 - Allows Doctors to register and accept appointments.
