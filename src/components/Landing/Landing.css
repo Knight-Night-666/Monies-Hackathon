@@ -129,7 +129,7 @@
     flex-direction: column;
     align-items: left;
     justify-content: space-between;
-    padding-top: 2%;
+    padding-top: 5%;
     padding-bottom: 0%;
     padding-left: 5%;
     padding-right: 5%;
@@ -137,12 +137,12 @@
 }
 
 .sb2_1heading{
-    height: 35%;
+    height: 30%;
     width: fit-content;
     /* margin-right: 1%; */
 }
 .sb2_1register_doc{
-    height: 7%;
+    height: 5%;
     width: fit-content;
     /* margin-right: 1%; */
 }
@@ -180,8 +180,8 @@
 }
 
 .sb3row{
-    height: 100%;
-    width: fit-content;
+    height: fit-content;
+    width: 50%;
 }
 .sb3cards{
     height: 70%;
@@ -191,25 +191,5 @@
     align-items: center;
     padding: 1%;
 
-}
-.sb3card1{
-    height: 100%;
-    width: fit-content;
-    margin-right: 1%;
-}
-.sb3card2{
-    height: 100%;
-    width: fit-content;
-    margin-right: 1%;
-}
-.sb3card3{
-    height: 100%;
-    width: fit-content;
-    margin-right: 1%;
-}
-.sb3card4{
-    height: 100%;
-    width: fit-content;
-    margin-right: 1%;
 }
 
