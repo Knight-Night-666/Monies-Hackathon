@@ -91,23 +91,27 @@ class Main extends Component {
       <table className="table">
           <thead>
             <tr>
-              <th scope="col">#</th>
+              <th scope="col">#id</th>
               <th scope="col">Patient Name</th>
               <th scope="col">Age</th>
-              <th scope="col">Gender</th>
-              <th scope="col">Symptoms</th>
-              <th scope="col"></th>
+              <th scope="col">Health issue</th>
+              <th scope="col">gender</th>
+              <th scope="col">Mode of Appointment</th>
+              <th scope="col">Special Need?</th>
             </tr>
           </thead>
           <tbody id="doctorList">
-              {this.props.doctors.map((doctor,key) => {
+              {this.props.patients.map((patient,key) => {
+                if(this.props.account==patient.doctor_account)
                   return (
                     <tr key={key}>
-                        <th scope="row">{doctor.id.toString()}</th>
-                        <td>{doctor.name}</td>
-                        <td>{window.web3.utils.fromWei(doctor.Cons_fees.toString(),'Ether')} Eth</td>
-                        <td>{doctor.doc_acc}</td>
-						<td>{doctor.specialisation}</td>
+                        <th scope="row">{patient.id.toString()}</th>
+                        <td>{patient.name}</td>
+                        <td>{patient.age}</td>
+                        <td>{patient.healthIssue}</td>
+                        <td>{patient.gender}</td>
+						            <td>{patient.modeofappointment}</td>
+                        <td>{patient.specialneedy}</td>
                     </tr>
                   )
               })}
