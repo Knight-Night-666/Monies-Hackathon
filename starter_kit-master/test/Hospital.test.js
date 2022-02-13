@@ -1,3 +1,5 @@
+const { assert } = require('chai')
+
 const Hospital = artifacts.require("./Hospital.sol")
 
 require('chai')
@@ -27,10 +29,12 @@ require('chai')
     })
 
     describe('doctors', async () => {
-        let result,doctorCount
+        let result,doctorCount,patientCount
         before(async () => {
             result = await hospital.addDoctor('Doc1', web3.utils.toWei('1','Ether'), "Gynaecologist", {from:seller})
             doctorCount = await hospital.doctorCount()
+            patientCount = await hospital.patientCount()
+            
         })
 
     
@@ -70,7 +74,7 @@ require('chai')
             oldDoctorBalance = new web3.utils.BN(oldDoctorBalance)
 
             //SUCCESS: patient makes purchase
-            result = await hospital.addAppointment(doctorCount,{from: buyer,value: web3.utils.toWei('1', 'Ether') })
+            result = await hospital.addAppointment(doctorCount,"chutiya","mera lunda chota hai",{from: buyer,value: web3.utils.toWei('1', 'Ether') })
             //Check logs
             const event = result.logs[0].args
             assert.equal(event.id.toNumber(),doctorCount.toNumber(), 'id is correct')
@@ -78,8 +82,15 @@ require('chai')
             assert.equal(event.name ,'Doc1' , 'name is correct')
             assert.equal(event.fees , web3.utils.toWei('1', 'Ether') , 'fees is correct')
             assert.equal(event.special , 'Gynaecologist' , 'Specialisation is correct')
-            assert.equal(event.doctor_acc , buyer , 'Account is correct')
+            // assert.equal(event.doctor_acc , buyer , 'Account is correct')
             assert.equal(event.purchased,true,"purchased is correct")
+            // assert.equal(event.lst_pat[doctorCount].name,"chutiya","is correct")
+
+            const pat = await hospital.patients(patientCount)
+
+            assert.equal(pat.name,"chutiya",'set hai')
+            assert.equal(pat.special,"mera lunda chota hai",'set hai')
+
 
             //CHECK IF doctor GOT FUNDS
             let newDoctorBalance
