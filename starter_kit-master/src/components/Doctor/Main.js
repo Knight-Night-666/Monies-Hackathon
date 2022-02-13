@@ -87,7 +87,8 @@ class Main extends Component {
     else
     return(
       <div className="form-group mr-sm-2">
-      Hello {this.props.doctors[i].name}
+      <h2>Hello Dr. {this.props.doctors[i].name}</h2>
+      <h4>Here are your Appointments</h4>
       <table className="table">
           <thead>
             <tr>
