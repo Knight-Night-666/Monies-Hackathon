@@ -4,7 +4,10 @@
 
 
 Problem it solves- Q1
+DESCRIBE WHAT CAN PEOPLE USE IT FOR, OR HOW IT MAKES EXISTING TASKS EASIER/SAFER E.T.C 
 Challenges we ran into- Q2
+TELL US ABOUT ANY SPECIFIC BUG OR HURDLE YOU RAN INTO WHILE BUILDING THIS PROJECT. HOW DID YOU GET OVER IT? 
+
 
 ## What it does:
 - Allows Doctors to register and accept appointments.
