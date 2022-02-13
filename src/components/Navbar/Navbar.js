@@ -25,7 +25,7 @@ const Navbar = () => {
                 </div>
                 
                 <div className='iamdoctor' onClick={()=>{
-                navigate('/Doctor/Doctor')}}>
+                navigate('/Doctor/Main')}}>
                     <img src="assets/navbar/iamdoctor.png" width="100%"/>
                 </div>
                 <div className='contactus'>
