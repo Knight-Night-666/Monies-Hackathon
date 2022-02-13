@@ -16,8 +16,12 @@ contract Hospital {
     struct Patient{
         uint id;
         string name;
+        string age;
+        string healthIssue;
+        string gender;
+        string modeofappointment;
+        string specialneedy;
         address payable pat_acc;
-        string special;
         address payable doctor_account;
     }
     
@@ -63,25 +67,28 @@ contract Hospital {
         // Triggering the event
         emit DoctorAdded(doctorCount, _name,(msg.sender), _fees, _special,false);
     }
-    function addAppointment(uint _id,string memory _pat_nem,string memory _pat_spec) public payable {
+
+    function addAppointment(uint _docId, string memory _name, string memory _age, string memory _issue, string memory _gender, string memory _modeofappointment, string memory _specialneedy) public payable {
         //create a patient
         //Patient storage pat = Patient(patientCount,_pat_nem,msg.sender,_pat_spec);
-        address payable temp;
-        temp=msg.sender; 
+        // address payable temp;
+        // temp=msg.sender; 
         
         //fetch the doctor
-        Doctor memory _doctor = doctors[_id];
+        Doctor storage _doctor = doctors[_docId];
         
         //fetch the owner
         address payable _seller = _doctor.doc_acc;
         //mark as purchased
-        _doctor.purchased = true;
+        // _doctor.purchased = true;
         //update doctor
-        doctors[_id] = _doctor;
+        //doctors[_docId] = _doctor;
         //pay the seller
+        patients[patientCount++]=Patient(patientCount,_name,_age,_issue,_gender,_modeofappointment,_specialneedy,   msg.sender,doctors[_docId].doc_acc);
+        
         address(_seller).transfer(msg.value);
         //trigger an event
-        patients[patientCount++]=Patient(patientCount,_pat_nem,msg.sender,_pat_spec,doctors[_id].doc_acc);
+        
         
         emit AppointmentPurchased(doctorCount, _doctor.name,(msg.sender),   _doctor.Cons_fees, _doctor.specialisation,true);
 

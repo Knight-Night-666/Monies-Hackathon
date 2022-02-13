@@ -104,8 +104,6 @@ require('chai')
             const expectedBalance = oldDoctorBalance.add(price)
             assert.equal(newDoctorBalance.toString(),expectedBalance.toString())
             // console.log(oldDoctorBalance,newDoctorBalance,price)
-
-
         })
         
     })
