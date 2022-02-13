@@ -31,13 +31,43 @@
     width: fit-content;
 }
 .sb1doctor{
-    height: 100%;
+    height: 95%;
     width: fit-content;
     margin-top: 3%;
 
 }
 
+.subpage_1_1{
+    position: static;
+    width: 100%;
+    height: 100vh;
+    padding: 0%;
 
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-around;
+    padding-top: 2%;
+    padding-bottom: 0%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.sb1_1heading{
+    position: relative;
+    height: 15%;
+    width: fit-content;
+}
+.sb1_1imgplaceholder{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sb1_1image{
+    height: 90%;
+    width: fit-content;
+    margin-top: 3%;
+}
 
 
 .subpage_2 {
@@ -81,32 +111,54 @@
 
 }
 
-.sb2card2{
-    height: 100%;
-    width: fit-content;
-    margin-right: 1%;
 
-}
-
-.sb2card3{
-    height: 100%;
-    width: fit-content;
-    margin-right: 1%;
-
-}
-
-.sb2card4{
-    height: 100%;
-    width: fit-content;
-    margin-right: 1%;
-
-}
 
 .sb2booknow{
     height: 15%;
     width: fit-content;
 
 }
+
+.subpage_2_1{
+    position: static;
+    width: 100%;
+    height: 100vh;
+    padding: 0%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-between;
+    padding-top: 2%;
+    padding-bottom: 0%;
+    padding-left: 5%;
+    padding-right: 5%;
+    background: #26335D;
+}
+
+.sb2_1heading{
+    height: 35%;
+    width: fit-content;
+    /* margin-right: 1%; */
+}
+.sb2_1register_doc{
+    height: 7%;
+    width: fit-content;
+    /* margin-right: 1%; */
+}
+.sb2_1oldmanholder{
+    display: flex;
+    height: 70%;
+    flex-direction: row;
+    justify-content: right;
+}
+.sb2_1oldman{
+    height: 100%;
+    width: fit-content;
+    
+    /* margin-right: 1%; */
+}
+
 
 
 .subpage_3 {
@@ -160,3 +212,4 @@
     width: fit-content;
     margin-right: 1%;
 }
+
