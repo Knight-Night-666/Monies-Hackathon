@@ -1,5 +1,5 @@
 # MedicoBetter: One stop Doctor Consulatancy portal
-
+### Main branch: **FinalProj**
 ## Inspiration:
 
 
@@ -68,6 +68,14 @@ npm install
 Video demostration : https://youtu.be/R7jGyxOcMTE (Video Link)
 
 Project related details(Images and description) : https://docs.google.com/document/d/1qUbFjrqeKwuotbfL-f1gB314MM7ChUuupz-T-e7dNNs/edit 
+
+## Platform: Web based
+
+## Tracks: 
+
+- Healthcare
+- Ethereum
+- Polygon
 
 ## Scalability:
 - In Future, we can implement various file storage techniques such as IPFS/Filecoin to store a patient's report and prescription. So, If a patient loses his prescription or report, he need not worry XD.
