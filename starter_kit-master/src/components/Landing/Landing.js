@@ -78,6 +78,14 @@ const Landing = () => {
         controls3.start("visible");
         }
     }, [controls3, inView3]);
+
+    const controls4 = useAnimation();
+    const [ref4, inView4] = useInView();
+    useEffect(() => {
+        if (inView4) {
+        controls4.start("visible");
+        }
+    }, [controls4, inView4]);
     
 
   return <div className='landing_page_skeleton'>
@@ -107,17 +115,23 @@ const Landing = () => {
         </motion.div>
 
 
-        <motion.div className='subpage_1_1'>
+        <motion.div className='subpage_1_1'
+        
+        animate={controls4}
+        variants={sb2cardsVariant}
+        initial="hidden"
+        >
             <motion.div className='sb1_1heading'
+            ref={ref4}
             variants={sb2cardVariant}
             >
                 <img src = 'assets/landing/subpage1_1/title.png' height = "100%"/>
             </motion.div>
-            <div className='sb1_1imgplaceholder'>
-            <motion.div className='sb1_1image' >
+            <motion.div className='sb1_1imgplaceholder' varaints={doctorvariant}>
+            <div className='sb1_1image' >
                 <img src = 'assets/landing/subpage1_1/vehicle.png' height = "100%"/>
-            </motion.div>
             </div>
+            </motion.div>
            
         </motion.div>
 
@@ -168,14 +182,15 @@ const Landing = () => {
         </div>
 
 
-
+            
         <motion.div className='subpage_2_1'
-        ref={ref2}
+        
         animate={controls2}
         variants={sb2cardsVariant}
         initial="hidden"
         >
             <motion.div className='sb2_1heading' whileHover={{ scale: 1.1 }}
+                ref={ref2}
                 variants={sb2cardVariant}
                 >
                     <img src = 'assets/landing/subpage2_1/heading.png' height = "100%"/>
@@ -184,6 +199,7 @@ const Landing = () => {
             onClick={()=>{
                 navigate("/Doctor/Main")
             }}
+            
             variants={sb2cardVariant}
                 >
                     <img src = 'assets/landing/subpage2_1/register_doctor.png' height = "100%"/>
@@ -203,9 +219,9 @@ const Landing = () => {
         <div className='subpage_3'>
 
 
-            <div className='sb3row' id='some-id'>
-                <img src = 'assets/landing/subpage3/row.png' height = "100%"/>
-            </div>
+            <motion.div className='sb3row' id='some-id' variants={sb2cardVariant}>
+                <img src = 'assets/landing/subpage3/row.png' width = "100%"/>
+            </motion.div>
             
             <motion.div className='sb3cards' 
             ref={ref1}

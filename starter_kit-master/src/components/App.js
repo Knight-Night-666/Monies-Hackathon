@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 import './App.css';
 import Hospital from '../abis/Hospital.json';
-
+import Appointment from './Appointment/Appointment'
 import Main from './Doctor/Main';
 import Landing from './Landing/Landing';
 import Patient from './Patient/Patient';
@@ -67,19 +67,22 @@ class App extends Component {
       PatientCount:0,
       doctors: [],
       loading: true
+      
     }
 
     this.addDoctor = this.addDoctor.bind(this)
     this.addAppointment = this.addAppointment.bind(this)
   }
 
-  addAppointment(id,name,symp,price) {
+  addAppointment(id,name,age,healthissue,gender,modeofappointment,specialneedy,price) {
     this.setState({loading: true})
-    this.state.hospital.methods.addAppointment(id,name,symp).send({from: this.state.account, value: price})
+    this.state.hospital.methods.addAppointment(id,name,age,healthissue,gender,modeofappointment,specialneedy).send({from: this.state.account, value: price})
     .once('receipt',(receipt)=> {
       this.setState({PatientCount: this.state.PatientCount+1})
       this.setState({ loading: false })
     })
+
+    console.log(id);
   }
 
 
@@ -116,8 +119,22 @@ class App extends Component {
           addAppointment = {this.addAppointment}
           account = {this.state.account}
           doctorCount = {this.state.DoctorCount}
+           
           />
           }/>
+
+          <Route exact path='/Appointment/Appointment' element={
+          <Appointment
+          
+          doctors = {this.state.doctors} 
+          addAppointment = {this.addAppointment}
+          account = {this.state.account}
+          doctorCount = {this.state.DoctorCount}
+          
+           
+          />
+          }/>
+
           <Route exact path='/' element={<Landing/>}/>
           
         </Routes>
