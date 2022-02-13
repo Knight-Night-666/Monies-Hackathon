@@ -54,7 +54,6 @@ const Landing = () => {
         
         
         <div className='subpage_1'>
-
             {/* <div className="iamdoctor_button" onClick={()=>{
                 navigate("/Doctor/Main") 
             }}>I am Doctor</div> */}

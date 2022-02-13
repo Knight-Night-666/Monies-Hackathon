@@ -4,12 +4,22 @@ import './Navbar.css'
 class Navbar extends Component {
     render() {
     return (
-        <nav className='root'>
-            <h2>Medical App</h2>
-            <img src="assets/navbar/contactus.png" height="50" />
-            
-            
-        </nav>
+        <div className='nav'>
+            <div className='title'>
+                <img src="assets/navbar/title.png" width="100%"/>
+            </div>
+            <div className="dproutes">
+                <div className='iampatient'>
+                    <img src="assets/navbar/iampatient.png" width="100%"/>
+                </div>
+                <div className='iamdoctor'>
+                    <img src="assets/navbar/iamdoctor.png" width="100%"/>
+                </div>
+                <div className='contactus'>
+                    <img src="assets/navbar/contactus.png" width="100%"/>
+                </div>
+            </div>
+        </div>
     );
   }
 }
