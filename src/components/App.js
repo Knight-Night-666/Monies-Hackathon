@@ -14,6 +14,7 @@ import Main from './Doctor/Main';
 import Landing from './Landing/Landing';
 import Patient from './Patient/Patient';
 import Navbar from './Navbar/Navbar';
+import Appointment from './Appointment/Appointment'
 
 class App extends Component {
 
@@ -97,7 +98,9 @@ class App extends Component {
           />
           }/>
           <Route exact path='/Patient/Patient' element={<Patient/>}/>
-
+          <Route exact path='/Appointment/Appointment' element={
+          <Appointment/>
+          }/>
           <Route exact path='/' element={<Landing/>}/>
           
         </Routes>

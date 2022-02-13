@@ -18,8 +18,13 @@ const Navbar = () => {
             
 
             <div className="dproutes" > 
-                <motion.div className='iampatient' onClick={()=>{
+                {/* <motion.div className='iampatient' onClick={()=>{
                 navigate('/Patient/Patient')}} whileHover={{ scale: 1.1 }}>
+                    <img src="assets/navbar/iampatient.png" width="100%"/>
+                </motion.div> */}
+
+                <motion.div className='iampatient' onClick={()=>{
+                navigate('/Appointment/Appointment')}} whileHover={{ scale: 1.1 }}>
                     <img src="assets/navbar/iampatient.png" width="100%"/>
                 </motion.div>
                 
