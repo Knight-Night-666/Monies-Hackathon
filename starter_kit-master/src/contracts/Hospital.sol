@@ -72,15 +72,6 @@ contract Hospital {
 
     }
 
-
-
-
-
-
-
-
-
-
     uint public patientCount = 0;
     mapping(uint => Patient) public patients;
     struct Patient{

@@ -1,10 +1,8 @@
- const { assert } = require("chai")
-
 const Hospital = artifacts.require("./Hospital.sol")
 
 require('chai')
     .use(require('chai-as-promised'))
-    .should
+    .should()
 
     contract('Hospital', ([deployer,seller,buyer]) => {
     let hospital
@@ -35,23 +33,7 @@ require('chai')
             doctorCount = await hospital.doctorCount()
         })
 
-        // it('Added a Doctor', async () => {
-        //     assert.equal(doctorCount, 1)
-        //     const event = result.logs[0].args
-        //     assert.equal(event.id.toNumber(),doctorCount.toNumber(), 'id is correct')
-        //     assert.equal(event.doctor_acc , doctor , 'Account is correct')
-        //     assert.equal(event.name ,'Doc1' , 'name is correct')
-        //     assert.equal(event.fees , web3.utils.toWei('1', 'Ether').toString() , 'fees is correct')
-        //     assert.equal(event.special , 'Gynaecologist' , 'Specialisation is correct')
-        //     assert.equal(event.purchased,false,"purchased is correct")
-        //     // assert.equal(event.completed , false , 'completed is correct')
-        // })
-
-        // it('Donates Amount', async () => {
-        //     await donations.donate(1, {from: donator, value: web3.utils.toWei('5', 'Ether')})
-        //     await donations.donate(1, {from: donator, value: web3.utils.toWei('10', 'Ether')})
-        //     console.log(result.logs[0].args.raised.toString())
-        // })
+    
         it('creates doctor', async () => {
             //SUCCESS:
             assert.equal(doctorCount, 1)
@@ -63,22 +45,22 @@ require('chai')
             assert.equal(event.doctor_acc , seller , 'Account is correct')
             assert.equal(event.purchased,false,"purchased is correct")
 
-            // console.log(event.id,event.name,event.fees,event.special,event.doctor_acc,event.purchased)
-            // // FAILURE: Product must have a name
-            // await await hospital.addDoctor('', web3.utils.toWei('1', 'Ether'), { from: seller }).should.be.rejected;
-            //  // FAILURE: Product must have a price
-            // await await hospital.addDoctor('Doc1', 0, { from: seller }).should.be.rejected;
-            // // assert.equal(event.completed , false , 'completed is correct')
+            console.log(event.id,event.name,event.fees,event.special,event.doctor_acc,event.purchased)
+            // FAILURE: Product must have a name
+            await await hospital.addDoctor('', web3.utils.toWei('1', 'Ether'), { from: seller }).should.be.rejected;
+             // FAILURE: Product must have a price
+            await await hospital.addDoctor('Doc1', 0, { from: seller }).should.be.rejected;
+            // assert.equal(event.completed , false , 'completed is correct')
         })
-        //ye hagra hai bc patani kyu
+        
         it('lists doctors',async()=>{
-            const event = await hospital.doctors(doctorCount)
-            assert.equal(event.id.toNumber(),doctorCount.toNumber(), 'id is correct')
-            assert.equal(event.name.toString() ,'Doc1' , 'name is correct')
-            assert.equal(event.Cons_fees , web3.utils.toWei('1', 'Ether') , 'fees is correct')
-            assert.equal(event.purchased,false,"purchased is correct")
-            assert.equal(event.doc_acc , seller , 'Account is correct')
-            assert.equal(event.specialisation , 'Gynaecologist' , 'Specialisation is correct')
+            const doctor = await hospital.doctors(doctorCount)
+            assert.equal(doctor.id.toNumber(),doctorCount.toNumber(), 'id is correct')
+            assert.equal(doctor.name.toString() ,'Doc1' , 'name is correct')
+            assert.equal(doctor.Cons_fees, web3.utils.toWei('1', 'Ether') , 'fees is correct')
+            assert.equal(doctor.purchased,false,"purchased is correct")
+            assert.equal(doctor.doc_acc , seller , 'Account is correct')
+            assert.equal(doctor.specialisation , 'Gynaecologist' , 'Specialisation is correct')
             // console.log(event.id,event.name,event.fees,random.special,event.doctor_acc,event.purchased)
         })
         it('sells doctors',async()=>{
@@ -86,7 +68,6 @@ require('chai')
             let oldDoctorBalance
             oldDoctorBalance = await web3.eth.getBalance(seller)
             oldDoctorBalance = new web3.utils.BN(oldDoctorBalance)
-            console.log(oldDoctorBalance)
 
             //SUCCESS: patient makes purchase
             result = await hospital.addAppointment(doctorCount,{from: buyer,value: web3.utils.toWei('1', 'Ether') })
@@ -111,7 +92,8 @@ require('chai')
             
             const expectedBalance = oldDoctorBalance.add(price)
             assert.equal(newDoctorBalance.toString(),expectedBalance.toString())
-            console.log(oldDoctorBalance,newDoctorBalance,price)
+            // console.log(oldDoctorBalance,newDoctorBalance,price)
+
 
         })
         

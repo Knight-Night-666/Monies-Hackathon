@@ -1,1 +1,6 @@
 /* Styles go here */
+.navbar_position{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
