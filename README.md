@@ -24,6 +24,7 @@ One bug that we encountered was when we were uploading images to the reactjs. We
 - Allows Doctors to view their registered patients.
 - Provides priority to appoitnments to senior citizens.
 - Provides Ambulance services at the time of appointment.
+- We have deployed the project on Polygon Mumbai testnet
 
 ## Tech Stack:
 - Front-end:
@@ -45,7 +46,6 @@ One bug that we encountered was when we were uploading images to the reactjs. We
 ```
 https://github.com/Knight-Night-666/Monies-Hackathon 
 ```
-2. Launch Ganache
 2. Navigate to the `starter-kit-master` folder by
 ```
 cd starter-kit-master 
@@ -62,7 +62,7 @@ npm install
   ```
   npm run start
   ```
-6. Use the Metamask extension to connect to the network
+6. Use the Metamask extension to connect to Ploygon Mumbai testnetwork.
 ## Demo:
 
 Video demostration : https://youtu.be/R7jGyxOcMTE (Video Link)
