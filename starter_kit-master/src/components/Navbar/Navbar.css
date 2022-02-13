@@ -1,0 +1,42 @@
+
+.nav{
+    background: #26335D;
+
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    color: white;
+
+    padding:0.5%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.title{
+    width: 20%;
+    margin-right: 10%;
+
+
+}
+.dproutes{
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.iamdoctor{
+    width: 30%;
+
+}
+.iampatient{
+    width: 30%;
+    margin-right: 5%;
+}
+.contactus{
+    width: 40%;
+}

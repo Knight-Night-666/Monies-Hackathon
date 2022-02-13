@@ -1,0 +1,193 @@
+.landing_page_skeleton {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0%;
+    background: white;
+}
+.subpage_1 {
+    position: static;
+    width: 100%;
+    height: 100vh;
+    padding: 0%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0%;
+    padding-bottom: 0%;
+    padding-left: 5%;
+    padding-right: 5%;
+    background: #26335D;
+}
+
+
+.textleftdoctor{
+    position: relative;
+    height: 80%;
+    width: fit-content;
+}
+.sb1doctor{
+    height: 95%;
+    width: fit-content;
+    margin-top: 3%;
+
+}
+
+.subpage_1_1{
+    position: static;
+    width: 100%;
+    height: 100vh;
+    padding: 0%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-around;
+    padding-top: 2%;
+    padding-bottom: 0%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.sb1_1heading{
+    position: relative;
+    height: 15%;
+    width: fit-content;
+}
+.sb1_1imgplaceholder{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sb1_1image{
+    height: 90%;
+    width: fit-content;
+    margin-top: 3%;
+}
+
+
+.subpage_2 {
+    position: static;
+    width: 100%;
+    height: 100vh;
+
+    padding: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-around;
+    
+
+    background: #ffffff;
+}
+
+.sb2heading{
+    height: 10%;
+    width: fit-content;
+
+}
+
+.sb2cards{
+    height: 70%;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1%;
+
+}
+
+.sb2card1{
+    height: 100%;
+    width: fit-content;
+    margin-right: 1%;
+
+}
+
+
+
+.sb2booknow{
+    height: 15%;
+    width: fit-content;
+
+}
+
+.subpage_2_1{
+    position: static;
+    width: 100%;
+    height: 100vh;
+    padding: 0%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-between;
+    padding-top: 5%;
+    padding-bottom: 0%;
+    padding-left: 5%;
+    padding-right: 5%;
+    background: #26335D;
+}
+
+.sb2_1heading{
+    height: 30%;
+    width: fit-content;
+    /* margin-right: 1%; */
+}
+.sb2_1register_doc{
+    height: 5%;
+    width: fit-content;
+    /* margin-right: 1%; */
+}
+.sb2_1oldmanholder{
+    display: flex;
+    height: 70%;
+    flex-direction: row;
+    justify-content: right;
+}
+.sb2_1oldman{
+    height: 100%;
+    width: fit-content;
+    
+    /* margin-right: 1%; */
+}
+
+
+
+.subpage_3 {
+    position: static;
+    width: 100%;
+    height: 100vh;
+
+    padding: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-around;
+    
+
+    background: #ffffff;
+}
+
+.sb3row{
+    height: fit-content;
+    width: 50%;
+}
+.sb3cards{
+    height: 70%;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1%;
+
+}
