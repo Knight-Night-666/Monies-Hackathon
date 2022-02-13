@@ -64,8 +64,9 @@ npm install
   ```
 6. Use the Metamask extension to connect to the network
 ## Demo:
-https://youtu.be/R7jGyxOcMTE (Video Link)
 
+Video demostration : https://youtu.be/R7jGyxOcMTE (Video Link)
+Project related details(Images and description) : https://docs.google.com/document/d/1qUbFjrqeKwuotbfL-f1gB314MM7ChUuupz-T-e7dNNs/edit 
 
 ## Scalability:
 - In Future, we can implement various file storage techniques such as IPFS/Filecoin to store a patient's report and prescription. So, If a patient loses his prescription or report, he need not worry XD.
