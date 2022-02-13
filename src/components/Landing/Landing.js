@@ -70,7 +70,7 @@ const Landing = () => {
            
 
         </div>   
-        <div className='subpage_2'>
+        <div className='subpage_2' id={'section2'}>
             <div className='sb2heading'>
                 <img src = 'assets/landing/subpage2/heading.png' height = "100%"/>
             </div>
@@ -116,7 +116,7 @@ const Landing = () => {
         <div className='subpage_3'>
 
 
-            <div className='sb3row'>
+            <div className='sb3row' id='some-id'>
                 <img src = 'assets/landing/subpage3/row.png' height = "100%"/>
             </div>
             

@@ -84,8 +84,9 @@ class App extends Component {
     return (
       <div >
         
-        <Navbar/>
+        
         <Router>
+        <Navbar/>
         <div >
         
         <Routes>
@@ -96,23 +97,13 @@ class App extends Component {
           />
           }/>
           <Route exact path='/Patient/Patient' element={<Patient/>}/>
+
           <Route exact path='/' element={<Landing/>}/>
+          
         </Routes>
         </div>
         </Router>
-        {/* <div className="container-fluid mt-5">
-          <div className="row">
-            <main role="main" className="col-lg-12 d-flex">
-              {this.state.loading
-              ? <div id="loader" className="text-center"><p className="text-center">Loading...</p></div>
-              : <Main 
-                  doctors = {this.state.doctors} 
-                  addDoctor= {this.addDoctor}  
-                />
-              }
-            </main>
-          </div>
-        </div> */}
+        
       </div>
     );
   }
