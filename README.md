@@ -46,23 +46,27 @@ One bug that we encountered was when we were uploading images to the reactjs. We
 ```
 https://github.com/Knight-Night-666/Monies-Hackathon 
 ```
-2. Navigate to the `starter-kit-master` folder by
+2. Switch to the branch FinalProj
+```
+git checkout FinalProj
+```
+3. Navigate to the `starter-kit-master` folder by
 ```
 cd starter-kit-master 
 ```
-3. Install all npm packages by
+4. Install all npm packages by
 ```
 npm install
 ```
-4. Compile the Smart Contracts by
+5. Compile the Smart Contracts by
   ```
   truffle compile
   ```
-5. Run the Development server by
+6. Run the Development server by
   ```
   npm run start
   ```
-6. Use the Metamask extension to connect to Ploygon Mumbai testnetwork.
+7. Use the Metamask extension to connect to Ploygon Mumbai testnetwork.
 ## Demo:
 
 Video demostration : https://youtu.be/R7jGyxOcMTE (Video Link)
